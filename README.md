@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-# AngularBibliotecaCrud
+# Site
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.24.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.2.
 
 ## Development server
 
@@ -58,6 +57,3 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# biblioteca-angular
->>>>>>> 4a8f7a0938b118cdccb71fa61582d50ba2750d41
