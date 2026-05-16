@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Nome:</label>
+  <input formControlName="nome" type="text" />
+
+  <label>Nacionalidade:</label>
+  <input formControlName="nacionalidade" type="text" />
+
+  <button type="submit">Salvar</button>
+</form>

@@ -1,0 +1,19 @@
+{
+  "autores": [
+    {
+      "id": "1",
+      "nome": "Valentina",
+      "nacionalidade": "Americano(a)"
+    },
+    {
+      "id": "2",
+      "nome": "Evandro",
+      "nacionalidade": "Brasileiro(a)"
+    },
+    {
+      "id": "3",
+      "nome": "gabriela",
+      "nacionalidade": "Brasileiro(a)"
+    }
+  ]
+}

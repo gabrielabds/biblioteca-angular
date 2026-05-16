@@ -1,0 +1,69 @@
+<div class="app-container">
+  <aside class="sidebar">
+
+    <div class="logo-section">
+      <span class="material-symbols-rounded logo-icon-style">
+        menu_book
+      </span>
+
+      <div>
+        <h2 class="logo-text">LibraryOS</h2>
+        <p class="logo-sub">Admin Dashboard</p>
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+
+      <a
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-item"
+      >
+        <span class="material-symbols-rounded">dashboard</span>
+        Dashboard
+      </a>
+
+      <a
+        routerLink="/listagem"
+        routerLinkActive="active"
+        class="nav-item"
+      >
+        <span class="material-symbols-rounded">book</span>
+       Livros
+      </a>
+
+     <!-- <a
+        routerLink="/cadastrar"
+        routerLinkActive="active"
+        class="nav-item"
+      >
+        <span class="material-symbols-rounded">add_box</span>
+        Cadastrar
+      </a>-->
+
+      <a
+        routerLink="/consultar"
+        routerLinkActive="active"
+        class="nav-item"
+      >
+        <span class="material-symbols-rounded">search</span>
+        Consultar
+      </a>
+
+      <a
+        routerLink="/excluir"
+        routerLinkActive="active"
+        class="nav-item"
+      >
+        <span class="material-symbols-rounded">delete</span>
+        Excluir
+      </a>
+
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

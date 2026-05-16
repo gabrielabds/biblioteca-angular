@@ -1,0 +1,16 @@
+<form>
+  
+  <label for="input-id">ID do Autor</label><br />
+  <input class="input-simples" id="input-id" name="input-id" placeholder="Digite o ID" type="text"
+    [(ngModel)]="autor.id" />
+
+  <label for="input-nome">Nome</label><br />
+  <input class="input-simples" id="input-nome" name="input-nome" placeholder="Digite o nome do autor" type="text"
+    [(ngModel)]="autor.nome" />
+
+  <label for="input-nacionalidade">Nacionalidade</label><br />
+  <input class="input-simples" id="input-nacionalidade" name="input-nacionalidade"
+    placeholder="Digite a nacionalidade do autor" type="text" [(ngModel)]="autor.nacionalidade" />
+
+  <button class="input-submeter" (click)="submeter()">Cadastrar</button>
+</form>
