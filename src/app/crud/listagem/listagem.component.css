@@ -4,11 +4,21 @@
   margin: 40px auto;
   padding: 20px;
   border-radius: 8px;
-  overflow-x: auto; /* Permite rolar a tabela em telas pequenas */
+  overflow-x: auto;
+  
+}
+
+.wrapp-table{
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px ;
 }
 
 .table-header {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;/* Empurra o título para a esquerda e o botão para a direita */
+  align-items: center;/* Alinha ambos verticalmente ao centro */
 }
 
 .table-header h1 {
@@ -41,8 +51,10 @@ thead tr {
 th,
 td {
   padding: 12px 16px;
-  text-align: center; /* Centraliza tanto cabeçalho quanto células */
-  vertical-align: middle; /* Alinha verticalmente ao centro */
+  text-align: center;
+  /* Centraliza tanto cabeçalho quanto células */
+  vertical-align: middle;
+  /* Alinha verticalmente ao centro */
 }
 
 /* Estilo das linhas do corpo da tabela */
@@ -65,10 +77,6 @@ tbody tr td:last-child {
   border-bottom-right-radius: 12px;
 }
 
-/* Ajuste específico para a coluna de Ações 
-td:last-child {
-  white-space: nowrap;
-}*/
 
 /* Estilo base dos botões */
 td button {
@@ -115,10 +123,12 @@ td button {
 /*CSS DOS ICONES*/
 
 .material-symbols-rounded {
-  font-family: 'Material Symbols Rounded' ; /* Força o navegador a usar a fonte de ícones */
+  font-family: 'Material Symbols Rounded';
+  /* Força o navegador a usar a fonte de ícones */
   font-weight: normal;
   font-style: normal;
-  font-size: 20px; /* Tamanho dos ícones */
+  font-size: 20px;
+  /* Tamanho dos ícones */
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -134,8 +144,8 @@ td button {
   background-color: #000;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px;
+  gap: 8px;
+  padding: 10px 16px;
   border-radius: 8px;
   color: #fff;
   text-decoration: none;
