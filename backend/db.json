@@ -1,37 +1,62 @@
 {
   "autores": [
     {
-      "id": "1",
-      "nome": "Valentina",
-      "nacionalidade": "Americano(a)"
-    },
-    {
       "id": "2",
-      "nome": "Evandro",
-      "nacionalidade": "Brasileiro(a)"
+      "nome": "Evandra",
+      "nacionalidade": "Brasileira"
     },
     {
       "id": "3",
-      "nome": "gabriela",
-      "nacionalidade": "Brasileiro(a)"
+      "nome": "gabiru",
+      "nacionalidade": "Brasil"
+    },
+    {
+      "id": "4",
+      "nome": "leo",
+      "nacionalidade": "Brasiliense"
+    },
+    {
+      "id": 12456,
+      "nome": "murilo",
+      "nacionalidade": "alemao"
     }
   ],
-
   "livros": [
     {
       "id": "1",
-      "nome": "Valentina",
-      "nacionalidade": "Americano(a)"
+      "titulo": "gabi",
+      "ano": 32,
+      "genero": "1213",
+      "editora": "217",
+      "isbn": "21312312",
+      "idAutor": 3
     },
     {
       "id": "2",
-      "nome": "Evandro",
-      "nacionalidade": "Brasileiro(a)"
+      "titulo": "leo",
+      "ano": 12,
+      "genero": "dasdaosj",
+      "editora": "dasodjasop",
+      "isbn": "odsjaopd",
+      "idAutor": 12456
     },
     {
-      "id": "3",
-      "nome": "gabriela",
-      "nacionalidade": "Brasileiro(a)"
+      "id": 123,
+      "titulo": "le",
+      "ano": 12,
+      "genero": "ge",
+      "editora": "wqq",
+      "isbn": "12",
+      "idAutor": 2
+    },
+    {
+      "id": 1234,
+      "titulo": "leo",
+      "ano": 2123,
+      "genero": "leo",
+      "editora": "leo",
+      "isbn": "leo",
+      "idAutor": 12456
     }
   ]
 }

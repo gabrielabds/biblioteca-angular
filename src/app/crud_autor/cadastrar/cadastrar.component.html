@@ -1,7 +1,7 @@
-<form>
+<form (ngSubmit)="submeter()">
   
   <label for="input-id">ID do Autor</label><br />
-  <input class="input-simples" id="input-id" name="input-id" placeholder="Digite o ID" type="text"
+  <input class="input-simples" id="input-id" name="input-id" placeholder="Digite o ID" type="number"
     [(ngModel)]="autor.id" />
 
   <label for="input-nome">Nome</label><br />
@@ -12,5 +12,5 @@
   <input class="input-simples" id="input-nacionalidade" name="input-nacionalidade"
     placeholder="Digite a nacionalidade do autor" type="text" [(ngModel)]="autor.nacionalidade" />
 
-  <button class="input-submeter" (click)="submeter()">Cadastrar</button>
+  <button class="input-submeter" type="submit">Cadastrar</button>
 </form>

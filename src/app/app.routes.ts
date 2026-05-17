@@ -1,16 +1,37 @@
 import { Routes } from '@angular/router';
-import { CadastrarComponent } from './crud/cadastrar/cadastrar.component';
-import { ConsultarComponent } from './crud/consultar/consultar.component';
-import { AlterarComponent } from './crud/alterar/alterar.component';
-import { ExcluirComponent } from './crud/excluir/excluir.component';
-import { ListagemComponent } from './crud/listagem/listagem.component';
+
+// Imporando Livros com apelidos (as ...)
+import { CadastrarComponent as CadastrarLivroComponent } from './crud_livros/cadastrar/cadastrar.component';
+import { ConsultarComponent as ConsultarLivroComponent } from './crud_livros/consultar/consultar.component';
+import { AlterarComponent as AlterarLivroComponent } from './crud_livros/alterar/alterar.component';
+import { ExcluirComponent as ExcluirLivroComponent } from './crud_livros/excluir/excluir.component';
+import { ListagemComponent as ListagemLivroComponent } from './crud_livros/listagem/listagem.component';
+
+// Importando Autores com apelidos (as ...)
+import { CadastrarComponent as CadastrarAutorComponent } from './crud_autor/cadastrar/cadastrar.component';
+import { ConsultarComponent as ConsultarAutorComponent } from './crud_autor/consultar/consultar.component';
+import { AlterarComponent as AlterarAutorComponent } from './crud_autor/alterar/alterar.component';
+import { ExcluirComponent as ExcluirAutorComponent } from './crud_autor/excluir/excluir.component';
+import { ListagemComponent as ListagemAutorComponent } from './crud_autor/listagem/listagem.component';
 
 export const routes: Routes = [
-  { path: '', component: ListagemComponent },
-  { path: 'cadastrar', component: CadastrarComponent, title:'Cadastrar' },
-  { path: 'consultar', component: ConsultarComponent },
-  { path: 'alterar/:id', component: AlterarComponent },
-  { path: 'excluir', component: ExcluirComponent },
-  { path: 'listagem', component: ListagemComponent },
-  { path: '**', redirectTo: 'consultar' }  // se clicar em link quebrado, abra o componente consultar
+  // Rota inicial (pode redirecionar para a listagem de livros, por exemplo)
+  { path: '', redirectTo: 'livros', pathMatch: 'full' },
+
+  // --- ROTAS DE LIVROS ---
+  { path: 'livros', component: ListagemLivroComponent, title: 'Listagem de Livros' },
+  { path: 'livros/cadastrar', component: CadastrarLivroComponent, title: 'Cadastrar Livro' },
+  { path: 'livros/consultar', component: ConsultarLivroComponent },
+  { path: 'livros/alterar/:id', component: AlterarLivroComponent },
+  { path: 'livros/excluir', component: ExcluirLivroComponent },
+
+  // --- ROTAS DE AUTORES ---
+  { path: 'autores', component: ListagemAutorComponent, title: 'Listagem de Autores' },
+  { path: 'autores/cadastrar', component: CadastrarAutorComponent, title: 'Cadastrar Autor' },
+  { path: 'autores/consultar', component: ConsultarAutorComponent },
+  { path: 'autores/alterar/:id', component: AlterarAutorComponent },
+  { path: 'autores/excluir', component: ExcluirAutorComponent },
+
+  // Se digitar um link quebrado, redireciona para livros
+  { path: '**', redirectTo: 'livros' }  
 ];

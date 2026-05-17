@@ -1,0 +1,38 @@
+<form (ngSubmit)="submeter()">
+  
+  <label for="input-id">ID do Livro</label><br />
+  <input class="input-simples" id="input-id" name="input-id" placeholder="Digite o ID" type="number"
+    [(ngModel)]="livro.id" />
+
+  <label for="input-titulo">Título</label><br />
+  <input class="input-simples" id="input-titulo" name="input-titulo" placeholder="Digite o título do livro" type="text"
+    [(ngModel)]="livro.titulo" />
+
+  <label for="input-ano">Ano</label><br />
+  <input class="input-simples" id="input-ano" name="input-ano"
+    placeholder="Digite o ano do livro" type="number" [(ngModel)]="livro.ano" />
+
+  <label for="input-genero">Gênero</label><br />
+  <input class="input-simples" id="input-genero" name="input-genero"
+    placeholder="Digite o gênero do livro" type="text" [(ngModel)]="livro.genero" />
+
+  <label for="input-editora">Editora</label><br />
+  <input class="input-simples" id="input-editora" name="input-editora"
+    placeholder="Digite a editora do livro" type="text" [(ngModel)]="livro.editora" />
+
+  <label for="input-isbn">ISBN</label><br />
+  <input class="input-simples" id="input-isbn" name="input-isbn"
+    placeholder="Digite o ISBN do livro" type="text" [(ngModel)]="livro.isbn" />
+
+  <label for="select-autor">Autor do Livro</label><br />
+<select class="input-simples" id="select-autor" name="idAutor" [(ngModel)]="livro.idAutor" required>
+  <option value="" disabled selected>Selecione um autor cadastrado</option>
+  
+  @for (autor of listaAutores; track autor.id) {
+    <option [ngValue]="autor.id">{{ autor.nome }} (ID: {{ autor.id }})</option>
+  }
+</select>
+
+  <br /><br />
+  <button class="input-submeter" type="submit">Cadastrar</button>
+</form>

@@ -1,0 +1,59 @@
+/* Estilo geral do formulário */
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos rótulos */
+form label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo dos inputs */
+.input-simples {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background-color: #ebebed;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+/* Efeito ao focar no input */
+.input-simples:focus {
+    color: #000;
+    background-color: #ddd;
+}
+
+/* Estilo do botão de submit */
+.input-submeter {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #000;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.input-submeter:hover {
+  color: #000;
+  background-color: #ddd;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
+}

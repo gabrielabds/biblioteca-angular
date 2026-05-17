@@ -12,48 +12,28 @@
       </div>
     </div>
 
-    <nav class="nav-menu">
+   <nav class="nav-menu">
 
-      <a
-        routerLink="/dashboard"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="nav-item"
-      >
+  <a
+    routerLink="/livros"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="nav-item"
+  >
+    <span class="material-symbols-rounded">import_contacts</span>
+    Livros
+  </a>
 
-      <span class="material-symbols-rounded">import_contacts</span>
-        Livros
-      </a>
+  <a
+    routerLink="/autores"
+    routerLinkActive="active"
+    class="nav-item"
+  >
+    <span class="material-symbols-rounded">person_edit</span>
+    Autores
+  </a>
 
-      <a
-        routerLink="/listagem"
-        routerLinkActive="active"
-        class="nav-item"
-      >
-        <span class="material-symbols-rounded">person_edit</span>
-       Autores
-      </a>
-
-     <!-- <a
-        routerLink="/cadastrar"
-        routerLinkActive="active"
-        class="nav-item"
-      >
-        <span class="material-symbols-rounded">add_box</span>
-        Cadastrar
-      </a>-->
-
-
-      <a
-        routerLink="/excluir"
-        routerLinkActive="active"
-        class="nav-item"
-      >
-        <span class="material-symbols-rounded">delete</span>
-        Excluir
-      </a>
-
-    </nav>
+</nav>
   </aside>
 
   <main class="main-content">

@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Titulo:</label>
+  <input formControlName="titulo" type="text" />
+
+  <label>Ano:</label>
+  <input formControlName="ano" type="number" />
+
+  <label>Gênero:</label>
+  <input formControlName="genero" type="text" />
+
+  <label>Editora:</label>
+  <input formControlName="editora" type="text" />
+
+  <label>Autor:</label>
+<select formControlName="idAutor">
+  <option value="">Selecione um autor</option>
+  
+  @for (autor of listaAutores; track autor.id){
+    <option [ngValue]="autor.id">{{ autor.nome }} (ID: {{ autor.id }})</option>
+  }
+</select>
+
+  <label>ISBN:</label>
+  <input formControlName="isbn" type="text" />
+
+  <button type="submit">Salvar</button>
+</form>

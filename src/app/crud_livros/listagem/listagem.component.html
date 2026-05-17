@@ -1,0 +1,49 @@
+<div class="content-container">
+
+  <div class="table-header">
+    <h1>Gerenciamento de Livros</h1> <a routerLink="/livros/cadastrar" routerLinkActive="active" class="nav-item">
+      <span class="material-symbols-rounded">add</span>
+      Cadastrar Novo Livro
+    </a>
+  </div>
+
+  <a routerLink="/livros/consultar" routerLinkActive="active" class="nav-item">
+    <span class="material-symbols-rounded">search</span>
+    Consultar
+  </a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Ano</th>
+        <th>Gênero</th>
+        <th>Editora</th>
+        <th>ISBN</th>
+        <th>Nome do Autor</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (livro of listaLivros; track livro){
+      <tr>
+        <td>{{ livro.id }}</td>
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.ano }}</td>
+        <td>{{ livro.genero }}</td>
+        <td>{{ livro.editora }}</td>
+        <td>{{ livro.isbn }}</td>
+        <td>{{ getNomeAutor(livro.idAutor) }}</td>
+        <td>
+          <div class="acoes">
+            <button *ngIf="livro.id" class="btn-editar" [routerLink]="['/livros/alterar', livro.id]">Editar</button>
+            <button class="btn-excluir" (click)="excluir(livro.id!)">Excluir</button>
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+</div>

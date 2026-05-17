@@ -2,14 +2,13 @@
 
   <div class="table-header">
     <h1>Gerenciamento de Autores</h1>
-    <a routerLink="/cadastrar" routerLinkActive="active" class="nav-item">
+    <a routerLink="/autores/cadastrar" routerLinkActive="active" class="nav-item">
       <span class="material-symbols-rounded">add</span>
-      Cadastrar Novo Livro
+      Cadastrar Novo Autor
     </a>
   </div>
 
-
-  <a routerLink="/consultar" routerLinkActive="active" class="nav-item">
+  <a routerLink="/autores/consultar" routerLinkActive="active" class="nav-item">
     <span class="material-symbols-rounded">search</span>
     Consultar
   </a>
@@ -31,7 +30,7 @@
         <td>{{ autor.nacionalidade }}</td>
         <td>
           <div class="acoes">
-            <button *ngIf="autor.id" class="btn-editar" [routerLink]="['/alterar', autor.id]">Editar</button>
+            <button *ngIf="autor.id" class="btn-editar" [routerLink]="['/autores/alterar', autor.id]">Editar</button>
             <button class="btn-excluir" (click)="excluir(autor.id!)">Excluir</button>
           </div>
         </td>
