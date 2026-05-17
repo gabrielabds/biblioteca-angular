@@ -18,7 +18,7 @@ export class ConsultarComponent {
 
   constructor(private autoresService: AutoresService) { }
 
-  buscarCliente(): void {
+  buscarAutor(): void {
     this.erroBusca = '';
     this.autorEncontrado = null;
 

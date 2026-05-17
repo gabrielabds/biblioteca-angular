@@ -20,8 +20,19 @@ export class CadastrarComponent {
   ) { }
 
   submeter() {
-    this.service.incluir(this.autor).subscribe(() => {
-      this.router.navigate(['/listagem']);
+    // Garante que o ID digitado vá como número puro para o json-server
+    this.autor.id = Number(this.autor.id);
+
+    this.service.incluir(this.autor).subscribe({
+      next: () => {
+        // Se der certo, volta para a lista de autores
+        this.router.navigate(['/autores']); 
+      },
+      error: (err) => {
+        // Se o json-server recusar (por ID duplicado ou servidor desligado), esse alerta avisa:
+        alert('O json-server recusou o cadastro! Verifique se esse ID de Autor já existe ou se o servidor caiu.');
+        console.error(err);
+      }
     });
   }
 

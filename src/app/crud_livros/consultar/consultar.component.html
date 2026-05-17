@@ -1,0 +1,31 @@
+<div class="consulta-container">
+    <form (ngSubmit)="buscarLivro()">
+      <label for="input-id">ID do Livro</label>
+      <input
+        type="number"
+        id="input-id"
+        name="input-id"
+        [(ngModel)]="idBusca"
+        class="input-id"
+        placeholder="Digite o ID do livro"
+        required
+      />
+      <button type="submit" class="btn-buscar">Buscar</button>
+    </form>
+  
+    <div *ngIf="livroEncontrado" class="cliente-dados">
+      <h2>Dados do Livro</h2>
+      <p><strong>ID:</strong> {{ livroEncontrado.id }}</p>
+      <p><strong>Titulo:</strong> {{ livroEncontrado.titulo }}</p>
+      <p><strong>Ano:</strong> {{ livroEncontrado.ano }}</p>
+      <p><strong>Gênero:</strong> {{ livroEncontrado.genero }}</p>
+      <p><strong>Editora:</strong> {{ livroEncontrado.editora }}</p>
+        <p><strong>ISBN:</strong> {{ livroEncontrado.isbn }}</p>
+        <p><strong>Autor:</strong> {{ getNomeAutor(livroEncontrado.idAutor) }}</p>
+
+    </div>
+  
+    <div *ngIf="erroBusca" class="erro-busca">
+      {{ erroBusca }}
+    </div>
+  </div>

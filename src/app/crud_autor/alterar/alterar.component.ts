@@ -61,7 +61,7 @@ export class AlterarComponent implements OnInit {
       */
 
       this.autoresService.editar(autorAtualizado).subscribe(() => {
-        this.router.navigate(['/listagem']);
+        this.router.navigate(['/autores']); // Navega de volta para a listagem de autores após a atualização
       });
     }
   }
