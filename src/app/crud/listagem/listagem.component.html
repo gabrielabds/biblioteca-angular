@@ -1,0 +1,43 @@
+<div class="content-container">
+
+  <div class="table-header">
+    <h1>Gerenciamento de Autores</h1>
+    <a routerLink="/cadastrar" routerLinkActive="active" class="nav-item">
+      <span class="material-symbols-rounded">add</span>
+      Cadastrar Novo Livro
+    </a>
+  </div>
+
+
+  <a routerLink="/consultar" routerLinkActive="active" class="nav-item">
+    <span class="material-symbols-rounded">search</span>
+    Consultar
+  </a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Nacionalidade</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (autor of listaAutores; track autor){
+      <tr>
+        <td>{{ autor.id }}</td>
+        <td>{{ autor.nome }}</td>
+        <td>{{ autor.nacionalidade }}</td>
+        <td>
+          <div class="acoes">
+            <button *ngIf="autor.id" class="btn-editar" [routerLink]="['/alterar', autor.id]">Editar</button>
+            <button class="btn-excluir" (click)="excluir(autor.id!)">Excluir</button>
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+</div>

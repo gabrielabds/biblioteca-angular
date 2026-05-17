@@ -1,0 +1,144 @@
+:root {
+  --text-main: #111827;
+  --text-muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* CONTAINER PRINCIPAL */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background-color: #e9e8e8;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/* LOGO */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 32px;
+  padding-left: 8px;
+}
+
+.logo-icon-style {
+  font-size: 28px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.logo-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* MENU */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* LINKS */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* HOVER */
+.nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* LINK ATIVO */
+.nav-item.active {
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded' ; /* Força o navegador a usar a fonte de ícones */
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px; /* Tamanho dos ícones */
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  flex-shrink: 0;
+}
+
+/* CONTEÚDO */
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 40px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 80px;
+    padding: 20px 10px;
+  }
+
+  .main-content {
+    margin-left: 80px;
+    padding: 20px;
+  }
+
+  .logo-text,
+  .logo-sub,
+  .nav-item span:not(.material-symbols-rounded) {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+
+  .logo-section {
+    justify-content: center;
+    padding-left: 0;
+  }
+}
