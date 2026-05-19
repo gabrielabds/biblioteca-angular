@@ -4,6 +4,14 @@
 
   <label>Nacionalidade:</label>
   <input formControlName="nacionalidade" type="text" />
+  <label>Data de Nascimento:</label>
+  <input formControlName="dataNascimento" type="date" />
+  <label>ORCID:</label>
+  <input formControlName="orcid" type="text" />
+  <label>ISNI:</label>
+  <input formControlName="isni" type="text" />
+  <label>Código Cutter:</label>
+  <input formControlName="codigoCutter" type="text" />
 
-  <button type="submit">Salvar</button>
+  <button type="submit" [disabled]="form.invalid">Salvar</button>
 </form>

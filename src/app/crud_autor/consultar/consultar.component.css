@@ -8,6 +8,22 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo do link de voltar no topo */
+.btn-voltar-topo {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.btn-voltar-topo:hover {
+  color: #0f172a;
+  transform: translateX(-4px); /* Dá um efeitinho sutil indo para a esquerda */
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -65,4 +81,44 @@ form label {
   margin-top: 20px;
   color: red;
   font-weight: bold;
+}
+
+/* --- ESTILOS DOS BOTÕES DE AÇÃO --- */
+
+.botoes-acao {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px; /* Dá um respiro entre os dados e os botões */
+  justify-content: space-between;
+}
+
+.botoes-acao button {
+  width: 100%; /* Faz os botões ocuparem todo o espaço disponível igualitariamente */
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-editar {
+  background-color: #17a2b8; /* Mesmo azul cyan da sua tabela */
+}
+
+.btn-editar:hover {
+  background-color: #138496;
+  transform: translateY(-2px);
+}
+
+.btn-excluir {
+  background-color: #e3342f; /* Mesmo vermelho da sua tabela */
+}
+
+.btn-excluir:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
 }

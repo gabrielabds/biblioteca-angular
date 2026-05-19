@@ -1,11 +1,16 @@
 /* Container principal */
 .content-container {
-  max-width: 1000px;
+  max-width: 1200px; /* Aumentado para 1200px para caber as colunas novas */
   margin: 40px auto;
   padding: 20px;
   border-radius: 8px;
+}
+
+/* Envoltório da tabela (segura a barra só no celular, no monitor ela some) */
+.table-responsive {
+  width: 100%;
   overflow-x: auto;
-  
+  margin-top: 20px; 
 }
 
 .wrapp-table{
@@ -32,13 +37,12 @@
 /* Estilo geral da tabela */
 table {
   width: 100%;
+  /* min-width foi removido daqui para a tabela se ajustar livremente à tela */
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid #ddd;
   border-radius: 12px;
   overflow: hidden;
-  margin-top: 20px;
-
 }
 
 /* Estilo dos cabeçalhos da tabela */
@@ -154,8 +158,6 @@ td button {
   transition: all 0.2s ease;
   cursor: pointer;
 }
-
-
 
 /* Responsividade para telas menores */
 @media (max-width: 600px) {
