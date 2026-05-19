@@ -7,9 +7,6 @@ form {
   border-radius: 8px;
   background-color: #fafafa;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-form {
   display: flex;
   flex-direction: column;
 }
@@ -23,8 +20,9 @@ form label {
   color: #333;
 }
 
-/* Estilo dos campos de input */
-form input {
+/* Estilo dos campos de input e select */
+form input,
+.input-simples {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -34,6 +32,14 @@ form input {
   border-radius: 6px;
   box-sizing: border-box;
   transition: border-color 0.3s;
+}
+
+/* Efeito ao focar no input ou select */
+form input:focus,
+.input-simples:focus {
+  color: #000;
+  background-color: #ddd;
+  outline: none;
 }
 
 /* Estilo do botão */
@@ -51,8 +57,17 @@ form button {
   transition: background-color 0.3s;
 }
 
-form button:hover {
+form button:hover:not(:disabled) {
   color: #000;
   background-color: #ddd;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Trava visual quando o formulário estiver inválido */
+form button:disabled {
+  background-color: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none !important;
 }

@@ -1,8 +1,8 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <label>Titulo:</label>
+  <label>Título:</label>
   <input formControlName="titulo" type="text" />
 
-  <label>Ano:</label>
+  <label>Ano de Publicação:</label>
   <input formControlName="ano" type="number" />
 
   <label>Gênero:</label>
@@ -12,16 +12,15 @@
   <input formControlName="editora" type="text" />
 
   <label>Autor:</label>
-<select formControlName="idAutor">
-  <option value="">Selecione um autor</option>
-  
-  @for (autor of listaAutores; track autor.id){
-    <option [ngValue]="autor.id">{{ autor.nome }} (ID: {{ autor.id }})</option>
-  }
-</select>
+  <select class="input-simples" formControlName="idAutor">
+    <option value="">Selecione um autor</option>
+    @for (autor of listaAutores; track autor.id){
+      <option [ngValue]="autor.id">{{ autor.nome }} (ID: {{ autor.id }})</option>
+    }
+  </select>
 
   <label>ISBN:</label>
   <input formControlName="isbn" type="text" />
 
-  <button type="submit">Salvar</button>
+  <button type="submit" [disabled]="form.invalid">Salvar</button>
 </form>

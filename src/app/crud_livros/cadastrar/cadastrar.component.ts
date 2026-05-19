@@ -1,40 +1,50 @@
-import { Component, OnInit } from '@angular/core'; // <-- Adicionado o OnInit aqui
+import { Component, OnInit } from '@angular/core'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Livro, Autor } from '../../core/types/types'; // <-- Importado o Autor aqui
+import { Livro, Autor } from '../../core/types/types'; 
 import { LivrosService } from '../../core/services/livros.service';
-import { AutoresService } from '../../core/services/autores.service'; // <-- Importado o serviço de autores
-import { ActivatedRoute, Router } from '@angular/router';
-import { CommonModule } from '@angular/common'; // <-- Caso use o @for antigo, mas no Angular moderno o standalone já aceita de boas
+import { AutoresService } from '../../core/services/autores.service'; 
+import { ActivatedRoute, Router, RouterModule } from '@angular/router'; // <-- Importado o RouterModule
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-cadastrar',
-  standalone: true, // Garanta que isso está aqui se for standalone
-  imports: [FormsModule, ReactiveFormsModule, CommonModule], // <-- Adicione o CommonModule aqui por segurança
+  standalone: true, 
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, RouterModule], // <-- Adicionado RouterModule
   templateUrl: './cadastrar.component.html',
   styleUrl: './cadastrar.component.css'
 })
-export class CadastrarComponent implements OnInit { // <-- Adicionado o "implements OnInit"
+export class CadastrarComponent implements OnInit { 
   titulo = 'Cadastro de Livros';
   livro: Livro = {} as Livro;
-  listaAutores: Autor[] = []; // <-- Array para guardar os autores que existem no sistema
+  listaAutores: Autor[] = []; 
 
   constructor(
     private service: LivrosService,
-    private autoresService: AutoresService, // <-- Injetamos o serviço de autores aqui
+    private autoresService: AutoresService, 
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    // Busca a lista de autores do json-server assim que a tela carrega
     this.autoresService.listar().subscribe(autores => {
       this.listaAutores = autores;
     });
   }
 
   submeter() {
-    this.service.incluir(this.livro).subscribe(() => {
-      // CORREÇÃO: Mudamos de '/listagem' para '/livros' para bater com as novas rotas
-      this.router.navigate(['/livros']); 
+    // 1. Garante que os campos numéricos não sejam enviados como texto (evita quebrar a edição depois)
+    this.livro.id = Number(this.livro.id);
+    this.livro.ano = Number(this.livro.ano);
+    this.livro.idAutor = Number(this.livro.idAutor);
+
+    this.service.incluir(this.livro).subscribe({
+      next: () => {
+        this.router.navigate(['/livros']); 
+      },
+      error: (err) => {
+        // 2. Alerta caso tente cadastrar um ID de livro que já existe
+        alert('O json-server recusou o cadastro! Verifique se esse ID de Livro já existe.');
+        console.error(err);
+      }
     });
   }
 }

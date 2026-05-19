@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms'; // <-- Importar aqui
+// Importamos o Validators aqui:
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'; 
 import { AutoresService } from '../../core/services/autores.service';
-import { CommonModule } from '@angular/common'; // <-- (opcional, mas geralmente precisa)
+import { CommonModule } from '@angular/common'; 
 import { Autor } from '../../core/types/types';
 
 @Component({
   selector: 'app-alterar',
-  standalone: true, // <-- importante em standalone
+  standalone: true, 
   templateUrl: './alterar.component.html',
   styleUrls: ['./alterar.component.css'],
-  imports: [CommonModule, ReactiveFormsModule], // <-- Adicionar ReactiveFormsModule aqui
+  imports: [CommonModule, ReactiveFormsModule], 
 })
 export class AlterarComponent implements OnInit {
   form!: FormGroup;
@@ -26,19 +27,26 @@ export class AlterarComponent implements OnInit {
   ngOnInit(): void {
     this.idAutor = Number(this.route.snapshot.paramMap.get('id'));
 
-    //Cria um objeto do tipo formulário com os campos vazios (nome e nacionalidade)
+    // 1. ADICIONAMOS TODOS OS CAMPOS E AS REGRAS DE VALIDAÇÃO AQUI
     this.form = this.fb.group({
-      nome: [''],
-      nacionalidade: ['']
+      nome: ['', Validators.required],               // Obrigatório
+      nacionalidade: ['', Validators.required],      // Obrigatório
+      dataNascimento: ['', Validators.required],     // Obrigatório
+      orcid: [''],                                   // Opcional
+      isni: [''],                                    // Opcional
+      codigoCutter: ['']                             // Opcional
     });
 
-    //Chama o serviço que vai buscar os dados do autor pelo ID na API (GET /autor/:id).
     this.autoresService.buscarPorId(this.idAutor).subscribe(autor => {
-      //Se o cliente foi encontrado, atualiza os valores do formulário com os dados do cliente encontrado.
       if (autor) {
+        // 2. GARANTIMOS QUE O ANGULAR PREENCHA TODOS OS CAMPOS NA TELA
         this.form.patchValue({
           nome: autor.nome,
-          nacionalidade: autor.nacionalidade
+          nacionalidade: autor.nacionalidade,
+          dataNascimento: autor.dataNascimento,
+          orcid: autor.orcid,
+          isni: autor.isni,
+          codigoCutter: autor.codigoCutter
         });
       }
     });
@@ -47,21 +55,12 @@ export class AlterarComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       const autorAtualizado: Autor = {
-        id: this.idAutor, //pega o ID obtido da URL e que está em this.idAutor
-        ...this.form.value //pega o conteúdos dos campos do form e carrega no objetoclienteAtualizado
+        id: this.idAutor, 
+        ...this.form.value 
       };
 
-      /* vai gerar algo como mostrado abaixo e armazenar em clienteAtualizado
-      {
-        id: 5,     // Capturado da URL (não vem do formulário!)
-        nome: "João",
-        email: "joao@email.com",
-        telefone: "12345-6789"
-      }
-      */
-
       this.autoresService.editar(autorAtualizado).subscribe(() => {
-        this.router.navigate(['/autores']); // Navega de volta para a listagem de autores após a atualização
+        this.router.navigate(['/autores']); 
       });
     }
   }

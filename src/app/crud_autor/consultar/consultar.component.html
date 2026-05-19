@@ -1,26 +1,41 @@
 <div class="consulta-container">
-    <form (ngSubmit)="buscarAutor()">
-      <label for="input-id">ID do Autor</label>
-      <input
-        type="number"
-        id="input-id"
-        name="input-id"
-        [(ngModel)]="idBusca"
-        class="input-id"
-        placeholder="Digite o ID do autor"
-        required
-      />
-      <button type="submit" class="btn-buscar">Buscar</button>
-    </form>
   
-    <div *ngIf="autorEncontrado" class="cliente-dados">
-      <h2>Dados do Autor</h2>
-      <p><strong>ID:</strong> {{ autorEncontrado.id }}</p>
-      <p><strong>Nome:</strong> {{ autorEncontrado.nome }}</p>
-      <p><strong>Nacionalidade:</strong> {{ autorEncontrado.nacionalidade }}</p>
-    </div>
-  
-    <div *ngIf="erroBusca" class="erro-busca">
-      {{ erroBusca }}
+  <a routerLink="/autores" class="btn-voltar-topo">
+    ← Voltar para listagem
+  </a>
+
+  <form (ngSubmit)="buscarAutor()">
+    <label for="input-id">ID do Autor</label>
+    <input
+      type="number"
+      id="input-id"
+      name="input-id"
+      [(ngModel)]="idBusca"
+      class="input-id"
+      placeholder="Digite o ID do autor"
+      required
+    />
+    <button type="submit" class="btn-buscar">Buscar</button>
+  </form>
+
+  <div *ngIf="autorEncontrado" class="cliente-dados">
+    <h2>Dados do Autor</h2>
+    <p><strong>ID:</strong> {{ autorEncontrado.id }}</p>
+    <p><strong>Nome:</strong> {{ autorEncontrado.nome }}</p>
+    <p><strong>Nacionalidade:</strong> {{ autorEncontrado.nacionalidade }}</p>
+    
+    <p *ngIf="autorEncontrado.dataNascimento"><strong>Data de Nascimento:</strong> {{ autorEncontrado.dataNascimento | date:'dd/MM/yyyy':'UTC' }}</p>
+    <p *ngIf="autorEncontrado.orcid"><strong>ORCID:</strong> {{ autorEncontrado.orcid }}</p>
+    <p *ngIf="autorEncontrado.isni"><strong>ISNI:</strong> {{ autorEncontrado.isni }}</p>
+    <p *ngIf="autorEncontrado.codigoCutter"><strong>Código Cutter:</strong> {{ autorEncontrado.codigoCutter }}</p>
+
+    <div class="botoes-acao">
+      <button type="button" class="btn-editar" [routerLink]="['/autores/alterar', autorEncontrado.id]">Editar</button>
+      <button type="button" class="btn-excluir" (click)="excluirAutor()">Excluir</button>
     </div>
   </div>
+
+  <div *ngIf="erroBusca" class="erro-busca">
+    {{ erroBusca }}
+  </div>
+</div>

@@ -1,24 +1,25 @@
 {
   "autores": [
     {
-      "id": "2",
-      "nome": "Evandra",
-      "nacionalidade": "Brasileira"
-    },
-    {
       "id": "3",
       "nome": "gabiru",
       "nacionalidade": "Brasil"
     },
     {
-      "id": "4",
-      "nome": "leo",
-      "nacionalidade": "Brasiliense"
+      "id": 5,
+      "nome": "Murilo",
+      "nacionalidade": "estagiário Romulo"
     },
     {
-      "id": 12456,
-      "nome": "murilo",
-      "nacionalidade": "alemao"
+      "id": 6,
+      "nome": "NEYMAR",
+      "nacionalidade": "FAZ GOL"
+    },
+    {
+      "id": 10,
+      "nome": "leo",
+      "nacionalidade": "213",
+      "dataNascimento": "2006-05-12"
     }
   ],
   "livros": [
@@ -32,31 +33,22 @@
       "idAutor": 3
     },
     {
-      "id": "2",
-      "titulo": "leo",
-      "ano": 12,
-      "genero": "dasdaosj",
-      "editora": "dasodjasop",
-      "isbn": "odsjaopd",
-      "idAutor": 12456
+      "id": 6,
+      "titulo": "COPA DO MUNDO",
+      "ano": 2026,
+      "genero": "ROBINHO JR",
+      "editora": "VASCO",
+      "isbn": "RYAN SANTOS",
+      "idAutor": 6
     },
     {
-      "id": 123,
-      "titulo": "le",
-      "ano": 12,
-      "genero": "ge",
-      "editora": "wqq",
-      "isbn": "12",
-      "idAutor": 2
-    },
-    {
-      "id": 1234,
-      "titulo": "leo",
-      "ano": 2123,
-      "genero": "leo",
-      "editora": "leo",
-      "isbn": "leo",
-      "idAutor": 12456
+      "id": 8,
+      "titulo": "Segurança",
+      "ano": 2026,
+      "genero": "Segurança",
+      "editora": "Senac",
+      "isbn": "1229123901",
+      "idAutor": 10
     }
   ]
 }

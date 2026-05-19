@@ -57,3 +57,46 @@ form label {
   background-color: #ddd;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
 }
+.input-submeter:disabled {
+  background-color: #cbd5e1; /* Um cinza claro */
+  color: #64748b;
+  cursor: not-allowed;       /* Símbolo de bloqueado no mouse */
+  transform: none !important; /* Tira qualquer efeito de hover ou movimento */
+  box-shadow: none;
+}
+/* --- ESTILOS DO CONTAINER E BOTÃO DE VOLTAR --- */
+
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+/* Tira a margem do formulário original para não dar espaçamento duplo */
+form {
+  margin: 0; 
+}
+
+/* Estilo do link de voltar no topo */
+.btn-voltar-topo {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.btn-voltar-topo:hover {
+  color: #0f172a;
+  transform: translateX(-4px); /* Efeito suave para a esquerda */
+}
+
+/* Trava visual do botão de cadastrar (caso não tenha colocado ainda) */
+.input-submeter:disabled {
+  background-color: #cbd5e1; 
+  color: #64748b;
+  cursor: not-allowed;       
+  transform: none !important; 
+  box-shadow: none;
+}

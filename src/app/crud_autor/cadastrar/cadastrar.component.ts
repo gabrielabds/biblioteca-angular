@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Autor } from '../../core/types/types';
 import { AutoresService } from '../../core/services/autores.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router'; // <-- Adicionado o RouterModule aqui
 
 @Component({
   selector: 'app-cadastrar',
-  imports: [FormsModule, ReactiveFormsModule],
+  // Adicionado o RouterModule aqui nos imports do componente standalone para o routerLink funcionar:
+  imports: [FormsModule, ReactiveFormsModule, RouterModule], 
   templateUrl: './cadastrar.component.html',
   styleUrl: './cadastrar.component.css'
 })

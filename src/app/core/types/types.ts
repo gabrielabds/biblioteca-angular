@@ -2,6 +2,11 @@ export interface Autor {
   id: number;
   nome: string;
   nacionalidade: string;
+  // A interrogação indica que o banco aceita receber "undefined" ou vazio
+  dataNascimento: string;   
+  orcid?: string;          
+  isni?: string;           
+  codigoCutter?: string;   
 }
 
 export interface Livro {

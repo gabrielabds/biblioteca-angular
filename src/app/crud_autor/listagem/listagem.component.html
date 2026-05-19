@@ -13,30 +13,38 @@
     Consultar
   </a>
 
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Nacionalidade</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (autor of listaAutores; track autor){
-      <tr>
-        <td>{{ autor.id }}</td>
-        <td>{{ autor.nome }}</td>
-        <td>{{ autor.nacionalidade }}</td>
-        <td>
-          <div class="acoes">
-            <button *ngIf="autor.id" class="btn-editar" [routerLink]="['/autores/alterar', autor.id]">Editar</button>
-            <button class="btn-excluir" (click)="excluir(autor.id!)">Excluir</button>
-          </div>
-        </td>
-      </tr>
-      }
-    </tbody>
-  </table>
-
-</div>
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Nacionalidade</th>
+          <th>Data de Nascimento</th>
+          <th>ORCID</th>
+          <th>ISNI</th>
+          <th>Código Cutter</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (autor of listaAutores; track autor){
+        <tr>
+          <td>{{ autor.id }}</td>
+          <td>{{ autor.nome }}</td>
+          <td>{{ autor.nacionalidade }}</td>
+          <td>{{ autor.dataNascimento | date:'dd/MM/yyyy':'UTC' }}</td>
+          <td>{{ autor.orcid }}</td>
+          <td>{{ autor.isni }}</td>
+          <td>{{ autor.codigoCutter }}</td>
+          <td>
+            <div class="acoes">
+              <button *ngIf="autor.id" class="btn-editar" [routerLink]="['/autores/alterar', autor.id]">Editar</button>
+              <button class="btn-excluir" (click)="excluir(autor.id!)">Excluir</button>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div> </div>

@@ -1,16 +1,37 @@
-<form (ngSubmit)="submeter()">
+<div class="form-container">
   
-  <label for="input-id">ID do Autor</label><br />
-  <input class="input-simples" id="input-id" name="input-id" placeholder="Digite o ID" type="number"
-    [(ngModel)]="autor.id" />
+  <a routerLink="/autores" class="btn-voltar-topo">
+    ← Voltar para listagem
+  </a>
 
-  <label for="input-nome">Nome</label><br />
-  <input class="input-simples" id="input-nome" name="input-nome" placeholder="Digite o nome do autor" type="text"
-    [(ngModel)]="autor.nome" />
+  <form #meuForm="ngForm" (ngSubmit)="meuForm.valid && submeter()">
+    
+    <label for="input-id">ID do Autor</label><br />
+    <input class="input-simples" id="input-id" name="input-id" placeholder="Digite o ID" type="number"
+      [(ngModel)]="autor.id" required />
 
-  <label for="input-nacionalidade">Nacionalidade</label><br />
-  <input class="input-simples" id="input-nacionalidade" name="input-nacionalidade"
-    placeholder="Digite a nacionalidade do autor" type="text" [(ngModel)]="autor.nacionalidade" />
+    <label for="input-nome">Nome</label><br />
+    <input class="input-simples" id="input-nome" name="input-nome" placeholder="Digite o nome do autor" type="text"
+      [(ngModel)]="autor.nome" required/>
 
-  <button class="input-submeter" type="submit">Cadastrar</button>
-</form>
+    <label for="input-nacionalidade">Nacionalidade</label><br />
+    <input class="input-simples" id="input-nacionalidade" name="input-nacionalidade"
+      placeholder="Digite a nacionalidade do autor" type="text" [(ngModel)]="autor.nacionalidade" required />
+
+    <label for="input-data-nascimento">Data de Nascimento</label><br />
+    <input class="input-simples" id="input-data-nascimento" name="input-data-nascimento"
+      placeholder="Digite a data de nascimento do autor" type="date" [(ngModel)]="autor.dataNascimento" required />
+
+    <label for="input-orcid">ORCID (Opcional)</label><br />
+    <input class="input-simples" id="input-orcid" name="input-orcid" placeholder="Ex: 0000-0002-1825-0097" type="text" [(ngModel)]="autor.orcid" />
+
+    <label for="input-isni">ISNI (Opcional)</label><br />
+    <input class="input-simples" id="input-isni" name="input-isni" placeholder="Ex: 0000 0001 2146 1176" type="text" [(ngModel)]="autor.isni" />
+
+    <label for="input-codigo-cutter">Código Cutter (Opcional)</label><br />
+    <input class="input-simples" id="input-codigo-cutter" name="input-codigo-cutter" placeholder="Ex: A848" type="text" [(ngModel)]="autor.codigoCutter" />
+
+    <button class="input-submeter" type="submit" [disabled]="meuForm.invalid">Cadastrar</button>
+  </form>
+
+</div>
